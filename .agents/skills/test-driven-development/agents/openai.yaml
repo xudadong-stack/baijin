@@ -1,0 +1,5 @@
+interface:
+  display_name: "测试驱动开发"
+  short_description: "Run a test-first red-green-refactor cycle"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,67 @@
+{
+  "contentVersion": 1,
+  "startLocationId": "sample_town_start",
+  "locations": [
+    { "id": "sample_town_start", "name": "小镇起点" },
+    { "id": "sample_granny_gate", "name": "老婆婆院门" },
+    { "id": "sample_training_shed", "name": "校场西侧教习棚" }
+  ],
+  "npcs": [
+    {
+      "id": "sample_granny",
+      "name": "老婆婆",
+      "locationId": "sample_granny_gate",
+      "morality": 60,
+      "initialAffinity": 5,
+      "luck": 50
+    },
+    {
+      "id": "sample_master",
+      "name": "师父",
+      "locationId": "sample_training_shed",
+      "morality": 45,
+      "initialAffinity": 0,
+      "luck": 50
+    }
+  ],
+  "quests": [
+    {
+      "id": "sample_sect_introduction",
+      "name": "师门接引",
+      "giverNpcId": "sample_master",
+      "turnInNpcId": "sample_master",
+      "reward": {
+        "coins": 20,
+        "potential": 0,
+        "experience": 0,
+        "items": [
+          { "itemId": "sample_light_wood_staff", "quantity": 1 }
+        ],
+        "martialArts": [
+          { "martialArtId": "sample_basic_staff", "level": 1 },
+          { "martialArtId": "sample_training_staff", "level": 1 }
+        ]
+      }
+    }
+  ],
+  "martialArts": [
+    { "id": "sample_basic_staff", "name": "基本棍法", "maxLevel": 5 },
+    { "id": "sample_training_staff", "name": "校场棍法", "maxLevel": 1 }
+  ],
+  "items": [
+    { "id": "sample_light_wood_staff", "name": "轻木棍" }
+  ],
+  "appearance": {
+    "weights": { "strength": 1, "agility": 3, "insight": 2, "constitution": 4 },
+    "thresholds": [30, 39, 48, 63, 72, 81],
+    "descriptions": [
+      { "male": "浓眉压眼，脸部轮廓颇为突兀。", "female": "阔额窄颌，五官相形悬殊。" },
+      { "male": "眉眼粗重，轮廓略显参差。", "female": "眉眼偏疏，轮廓略显生硬。" },
+      { "male": "相貌寻常，眉目平和。", "female": "相貌寻常，眉目平和。" },
+      { "male": "五官端正，举止利落。", "female": "五官匀称，仪态端方。" },
+      { "male": "眉眼俊朗，目光清亮。", "female": "眉目清秀，笑意明朗。" },
+      { "male": "眉目俊逸，在人群中颇为惹眼。", "female": "眉目秀丽，举止娴雅。" },
+      { "male": "神采卓然，眉宇间自有风流。", "female": "姿容明艳，一颦一笑皆见风姿。" }
+    ]
+  }
+}

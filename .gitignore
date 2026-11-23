@@ -1,0 +1,13 @@
+# 临时任务材料
+/.tmp/
+
+# 本机 Android SDK 和签名配置
+/local.properties
+/keystore.properties
+*.jks
+*.keystore
+
+# Gradle 和 Kotlin 生成物
+.gradle/
+.kotlin/
+build/

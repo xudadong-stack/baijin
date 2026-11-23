@@ -1,0 +1,5 @@
+interface:
+  display_name: "完成前验证"
+  short_description: "Match completion claims to project evidence"
+policy:
+  allow_implicit_invocation: true
