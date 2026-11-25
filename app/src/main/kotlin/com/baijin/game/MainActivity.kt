@@ -1,75 +1,187 @@
 package com.baijin.game
 
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.TextView
-import com.baijin.game.core.ActionRequirement
-import com.baijin.game.core.ActionResult
-import com.baijin.game.core.GameAction
-import com.baijin.game.core.GameCore
-import com.baijin.game.core.GameEngine
-import com.baijin.game.core.GameState
-import com.baijin.game.core.content.ContentIssue
-import com.baijin.game.core.content.ContentLoadResult
-import com.baijin.game.core.content.ContentLoader
-import com.baijin.game.core.content.GameContent
-import java.io.IOException
+import android.window.OnBackInvokedCallback
+import android.window.OnBackInvokedDispatcher
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import com.baijin.game.GameSession.Screen
+import com.baijin.game.SaveSlot.ReadResult
 
 class MainActivity : Activity() {
+    private val session by lazy { (application as BaijinApplication).session }
+    private val renderScreen: (Screen) -> Unit = ::render
+    private lateinit var root: FrameLayout
+    private val startup by lazy { layoutInflater.inflate(R.layout.activity_main, root, false) }
+    private val newGame by lazy {
+        startup.findViewById<Button>(R.id.new_game).apply {
+            styleGameButton(primary = true)
+            setOnClickListener { requestNewGame() }
+        }
+    }
+    private val continueGame by lazy {
+        startup.findViewById<Button>(R.id.continue_game).apply {
+            styleGameButton(primary = false)
+            setOnClickListener { session.continueGame() }
+        }
+    }
+    private val status by lazy { startup.findViewById<TextView>(R.id.startup_status) }
+    private val creation by lazy { CharacterCreationScreen(this, session) }
+    private val exploration = lazy { ExplorationScreen(this, session) }
+    private val sparring = lazy { SparringScreen(this, session) }
+    private var replaceDialog: AlertDialog? = null
+    private var interceptsBack = false
+    private val backCallback by lazy { OnBackInvokedCallback { session.returnToMenu() } }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        root = FrameLayout(this).apply { setBackgroundColor(getColor(R.color.paper)) }
+        ViewCompat.setOnApplyWindowInsetsListener(root) { view, insets ->
+            val safeArea = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout() or
+                    WindowInsetsCompat.Type.mandatorySystemGestures(),
+            )
+            view.setPadding(safeArea.left, safeArea.top, safeArea.right, safeArea.bottom)
+            insets
+        }
+        setContentView(root)
+        ViewCompat.requestApplyInsets(root)
+    }
 
-        val checkButton = findViewById<Button>(R.id.check_startup)
-        val status = findViewById<TextView>(R.id.startup_status)
-        when (val result = loadSampleContent()) {
-            is ContentLoadResult.Loaded -> bindStartupCheck(checkButton, status, result.content)
-            is ContentLoadResult.Invalid -> {
-                checkButton.isEnabled = false
-                status.text = result.issues.joinToString("\n") {
-                    getString(R.string.content_issue, it.path, it.message)
+    override fun onStart() {
+        super.onStart()
+        session.observe(renderScreen)
+    }
+
+    override fun onStop() {
+        session.removeObserver(renderScreen)
+        if (exploration.isInitialized()) exploration.value.releaseMovement()
+        if (sparring.isInitialized()) sparring.value.leave()
+        (session.screen as? Screen.PlayingSparring)?.let(session::finishSparringPlayback)
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        replaceDialog?.dismiss()
+        if (exploration.isInitialized()) exploration.value.dismissDialog()
+        interceptBack(false)
+        super.onDestroy()
+    }
+
+    // API 33+ uses the system back callback registered in interceptBack.
+    @SuppressLint("GestureBackNavigation")
+    @Suppress("DEPRECATION")
+    @Deprecated("Back navigation fallback for Android 12 and earlier")
+    override fun onBackPressed() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU && session.returnToMenu()) return
+        super.onBackPressed()
+    }
+
+    private fun requestNewGame() {
+        val menu = session.screen as? Screen.Menu ?: return
+        if (menu.save == ReadResult.Empty) {
+            session.startNewGame()
+        } else {
+            replaceDialog = AlertDialog.Builder(this)
+                .setTitle(R.string.new_game)
+                .setMessage(R.string.replace_save_prompt)
+                .setNegativeButton(R.string.cancel, null)
+                .setPositiveButton(R.string.replace_save) { _, _ -> session.startNewGame(menu.save) }
+                .show()
+        }
+    }
+
+    private fun render(screen: Screen) {
+        if (screen is Screen.PlayingSparring) {
+            interceptBack(true)
+            showView(sparring.value.view)
+            sparring.value.play(screen)
+            return
+        }
+        val active = when (screen) {
+            is Screen.Active -> screen
+            is Screen.Saving -> screen.previous
+            is Screen.SaveFailed -> screen.previous
+            else -> null
+        }
+        if (active !is Screen.Sparring && sparring.isInitialized()) sparring.value.leave()
+        interceptBack(active != null)
+        if (active != null) {
+            val notice = when (screen) {
+                is Screen.Saving -> if (active is Screen.Creating || active is Screen.Sparring) {
+                    getString(R.string.saving_game)
+                } else null
+                is Screen.SaveFailed -> getString(R.string.save_failed)
+                else -> null
+            }
+            val locked = screen !is Screen.Active
+            val canRetry = screen is Screen.SaveFailed
+            val target = when (active) {
+                is Screen.Creating -> creation.apply { render(active, locked, notice ?: active.notice, canRetry) }.view
+                is Screen.Exploring -> exploration.value.apply {
+                    render(active.game, locked, notice ?: active.notice, canRetry)
+                }.view
+                is Screen.Sparring -> {
+                    if (exploration.isInitialized()) {
+                        exploration.value.releaseMovement()
+                        exploration.value.dismissDialog()
+                    }
+                    sparring.value.apply { render(active.game, locked, notice ?: active.notice, canRetry) }.view
                 }
             }
+            showView(target)
+            return
         }
-    }
-
-    private fun loadSampleContent(): ContentLoadResult = try {
-        assets.open(SAMPLE_ASSET).bufferedReader(Charsets.UTF_8).use { reader ->
-            ContentLoader.load(reader.readText())
+        if (exploration.isInitialized()) {
+            exploration.value.releaseMovement()
+            exploration.value.dismissDialog()
         }
-    } catch (_: IOException) {
-        ContentLoadResult.Invalid(listOf(ContentIssue(SAMPLE_ASSET, getString(R.string.content_unreadable))))
-    }
-
-    private fun bindStartupCheck(button: Button, status: TextView, content: GameContent) {
-        val engine = GameEngine(content)
-        var state: GameState? = null
-        button.setOnClickListener {
-            val action = if (state == null) GameAction.Start else GameAction.InspectLocation
-            status.text = when (val result = engine.dispatch(state, action)) {
-                is ActionResult.Changed -> {
-                    state = result.state
-                    startupStatus(result.state.contentVersion, result.locationName)
-                }
-                is ActionResult.Display -> startupStatus(content.contentVersion, result.locationName)
-                is ActionResult.Blocked -> missingRequirement(result.requirement)
+        val menu = screen as? Screen.Menu
+        newGame.isEnabled = menu != null
+        continueGame.isEnabled = menu?.save is ReadResult.Available
+        status.text = when (screen) {
+            Screen.Loading -> getString(R.string.loading_game)
+            is Screen.ContentInvalid -> screen.issues.joinToString("\n") {
+                getString(R.string.content_issue, it.path, it.message)
             }
+            is Screen.Menu -> menuStatus(screen.save)
+            else -> error("Active screens are drawn before the startup menu")
         }
+        showView(startup)
     }
 
-    private fun startupStatus(version: Int, locationName: String): String =
-        getString(R.string.startup_check_result, GameCore.moduleName) + "\n" +
-            getString(R.string.startup_content_result, version, locationName)
-
-    private fun missingRequirement(requirement: ActionRequirement): String = when (requirement) {
-        ActionRequirement.StartRequired -> getString(R.string.start_required)
-        is ActionRequirement.ContentVersionMismatch ->
-            getString(R.string.content_version_mismatch, requirement.actual, requirement.expected)
-        is ActionRequirement.UnknownLocation -> getString(R.string.location_missing, requirement.locationId)
+    private fun menuStatus(save: ReadResult): String = when (save) {
+        ReadResult.Empty -> getString(R.string.no_save)
+        is ReadResult.Available -> getString(R.string.last_location, save.exploration.locationName)
+        ReadResult.Unreadable -> getString(R.string.save_unreadable)
+        ReadResult.Corrupt -> getString(R.string.save_corrupt)
+        is ReadResult.UnsupportedVersion -> getString(R.string.save_version_unsupported, save.version)
+        is ReadResult.IncompatibleContent -> getString(R.string.save_content_invalid, requirementText(save.requirement))
     }
 
-    private companion object {
-        const val SAMPLE_ASSET = "content/sample.json"
+    private fun showView(target: View) {
+        if (target.parent === root) return
+        root.removeAllViews()
+        root.addView(target, FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT))
+    }
+
+    private fun interceptBack(intercept: Boolean) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || interceptsBack == intercept) return
+        interceptsBack = intercept
+        if (intercept) {
+            onBackInvokedDispatcher.registerOnBackInvokedCallback(OnBackInvokedDispatcher.PRIORITY_DEFAULT, backCallback)
+        } else {
+            onBackInvokedDispatcher.unregisterOnBackInvokedCallback(backCallback)
+        }
     }
 }

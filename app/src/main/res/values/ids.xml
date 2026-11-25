@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="gender_male" type="id" />
+    <item name="gender_female" type="id" />
+    <item name="remaining_points" type="id" />
+    <item name="balance_attributes" type="id" />
+    <item name="confirm_character" type="id" />
+    <item name="retry_save" type="id" />
+    <item name="return_to_menu" type="id" />
+    <item name="town_map" type="id" />
+    <item name="movement_joystick" type="id" />
+    <item name="meditate_here" type="id" />
+    <item name="location_name" type="id" />
+    <item name="move_north" type="id" />
+    <item name="move_south" type="id" />
+    <item name="move_west" type="id" />
+    <item name="move_east" type="id" />
+    <item name="open_character" type="id" />
+    <item name="game_time" type="id" />
+    <item name="action_notice" type="id" />
+    <item name="open_inventory" type="id" />
+    <item name="talk_to_npc" type="id" />
+    <item name="open_quests" type="id" />
+    <item name="do_housework" type="id" />
+    <item name="draw_water" type="id" />
+    <item name="drink_water" type="id" />
+    <item name="eat_food" type="id" />
+</resources>

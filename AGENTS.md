@@ -9,6 +9,9 @@
 | 本次改动 | 阅读入口 |
 | --- | --- |
 | 角色、补给、任务、武学、战斗、物品或剧情 | [玩法模块索引](docs/gameplay-rules.md) · [术语表](GLOSSARY.md) |
+| 规划地图、建筑入口或场景往返 | [建筑与场景规则](docs/modules/world.md#建筑与场景) |
+| 绘制地图、生成或整理游戏美术素材 | **必须先读** [小镇井边美术参考](docs/art/town-well.md)，按[成组素材验收](docs/art/town-well.md#成组素材验收)列齐必备变体并验证样板 |
+| 生成或重绘人物和 NPC | **以已确认的男女主角为画风样板**，沿用手绘卡通公仔比例、墨线淡彩和地图视角。按人物档案设计年龄、体态、服饰和姿势，入包前按地图实际尺寸对照样板验收。[统一人物画风](docs/art/town-well.md#生成人物时保留的元素) |
 | 产品范围或游戏内进度 | [玩法范围](docs/gameplay.md) |
 | Gradle 模块、横屏界面、触控、数据配置、存档或生命周期 | [模块边界与架构](docs/architecture.md) |
 | 验证、回归、真机测试或完整版本验收 | [验收规则](docs/acceptance.md) |
@@ -17,9 +20,14 @@
 
 | 使用场景 | 技能 |
 | --- | --- |
+| 规划或调整地图、室内分区、隔墙、门位、家具摆位与通行路线。先按主角尺度验证门洞、过道、家具占地和各处可达性 | `$level-design` |
+| 新制、重绘或整理墙件、地面、家具、人物、图标等美术素材。核对同组素材的视角、尺寸和锚点，先验证墙段、转角、端头和门洞拼接样板，再铺整屋 | `$create-game-assets` |
+| 设计或调整摇杆、地点提示、交互按钮、菜单、背包等游戏界面。核对信息层级、触控范围、横屏安全区和对地图的遮挡 | `$game-ui-ux` |
 | 排查已有错误、回归、性能异常或构建故障 | [systematic-debugging](.agents/skills/systematic-debugging/SKILL.md) |
 | 明确要求测试先行，用失败测试驱动实现 | [test-driven-development](.agents/skills/test-driven-development/SKILL.md)，显式调用 |
 | 交付前核对成果、检查和对应证据 | [verification-before-completion](.agents/skills/verification-before-completion/SKILL.md) |
+
+整屋改造先用 `$level-design` 验证布局与通行，涉及墙件、家具或装潢时配合 `$create-game-assets`，涉及探索界面时配合 `$game-ui-ux`。技能中的通用方法应用于项目现有的 Android Canvas 地图和原生控件。生图沿用本机 Grsai API 约定。场景与界面一起改动时，在 16:9 和 20:9 的游戏画面中核对墙件接缝、出入口与界面遮挡。[验收规则](docs/acceptance.md)
 
 ## 改动范围
 

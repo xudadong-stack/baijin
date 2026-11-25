@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("plugin.serialization")
 }
 
 android {
@@ -20,6 +21,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
+    sourceSets.getByName("test").resources.srcDir("src/main/assets")
 }
 
 kotlin {
@@ -28,6 +31,9 @@ kotlin {
 
 dependencies {
     implementation(project(":game-core"))
+    implementation("androidx.core:core:1.17.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+    testImplementation("junit:junit:4.13.2")
 }
 
 tasks.named("preBuild") {

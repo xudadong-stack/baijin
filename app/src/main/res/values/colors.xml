@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paper">#F1E4CD</color>
+    <color name="paper_shade">#E8D9BD</color>
+    <color name="paper_line">#BAAA89</color>
+    <color name="ink">#263635</color>
+    <color name="muted_ink">#5B5140</color>
+    <color name="action_ink">#345354</color>
+    <color name="health_ink">#A04C40</color>
+    <color name="hunger_ink">#A06C31</color>
+    <color name="thirst_ink">#477887</color>
+</resources>

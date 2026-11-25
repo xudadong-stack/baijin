@@ -1,27 +1,4140 @@
 {
-  "contentVersion": 1,
-  "startLocationId": "sample_town_start",
+  "contentVersion": 3,
+  "startLocationId": "player_home_start",
+  "scenes": [
+    {
+      "id": "player_home",
+      "name": "家中",
+      "tiles": [
+        "#########",
+        "##.###..#",
+        "##..#..##",
+        "###.##.##",
+        "###....##",
+        "#####....",
+        "#......##",
+        "###.#####",
+        "#########"
+      ],
+      "exits": [
+        {
+          "id": "player_home_door",
+          "name": "出门",
+          "tile": {
+            "x": 8,
+            "y": 5
+          },
+          "direction": "EAST",
+          "returnTile": {
+            "x": 7,
+            "y": 5
+          },
+          "destinationExitId": "town_home_door",
+          "onEntry": true
+        }
+      ],
+      "indoors": true,
+      "terrain": [
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff"
+      ],
+      "scenery": [
+        {
+          "kind": "BED",
+          "x": 1.5,
+          "y": 2.86,
+          "width": 0.88,
+          "height": 1.58,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 1
+            },
+            {
+              "x": 1,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 3.46,
+          "y": 1.85,
+          "width": 0.61,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 5.49,
+          "y": 1.88,
+          "width": 0.64,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "BED",
+          "x": 7.45,
+          "y": 3.87,
+          "width": 0.88,
+          "height": 1.58,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 2
+            },
+            {
+              "x": 7,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "STOVE",
+          "x": 1.47,
+          "y": 5.9,
+          "width": 0.63,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 1.47,
+          "y": 7.81,
+          "width": 0.53,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 2.48,
+          "y": 7.8,
+          "width": 0.32,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "TABLE",
+          "x": 5.58,
+          "y": 7.74,
+          "width": 0.86,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "STOOL",
+          "x": 6.57,
+          "y": 7.88,
+          "width": 0.34,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "STOOL",
+          "x": 7.33,
+          "y": 6.87,
+          "width": 0.34,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "town",
+      "name": "平安镇西",
+      "tiles": [
+        "#######.############",
+        "#######.##........##",
+        "#........###...##..#",
+        "........########.#.#",
+        "###..##..#.........#",
+        "######...#.##.#...##",
+        "#######.###.#.##....",
+        "#..###........##...#",
+        "#...#.........######",
+        "#.............#....#",
+        "#####..............#",
+        "##########.#########"
+      ],
+      "exits": [
+        {
+          "id": "town_home_door",
+          "name": "家门",
+          "tile": {
+            "x": 6,
+            "y": 5
+          },
+          "direction": "WEST",
+          "returnTile": {
+            "x": 7,
+            "y": 5
+          },
+          "destinationExitId": "player_home_door",
+          "onEntry": true
+        },
+        {
+          "id": "town_granny_door",
+          "name": "老婆婆家",
+          "tile": {
+            "x": 2,
+            "y": 7
+          },
+          "direction": "NORTH",
+          "returnTile": {
+            "x": 2,
+            "y": 8
+          },
+          "destinationExitId": "granny_home_door",
+          "onEntry": true
+        },
+        {
+          "id": "town_tofu_door",
+          "name": "豆腐店",
+          "tile": {
+            "x": 16,
+            "y": 3
+          },
+          "direction": "NORTH",
+          "returnTile": {
+            "x": 16,
+            "y": 4
+          },
+          "destinationExitId": "tofu_shop_door",
+          "onEntry": true
+        },
+        {
+          "id": "town_tailor_door",
+          "name": "裁缝店",
+          "tile": {
+            "x": 11,
+            "y": 6
+          },
+          "direction": "NORTH",
+          "returnTile": {
+            "x": 11,
+            "y": 7
+          },
+          "destinationExitId": "tailor_shop_door",
+          "onEntry": true
+        },
+        {
+          "id": "town_east_exit",
+          "name": "向东",
+          "tile": {
+            "x": 19,
+            "y": 6
+          },
+          "direction": "EAST",
+          "returnTile": {
+            "x": 18,
+            "y": 6
+          },
+          "destinationExitId": "town_east_west_exit",
+          "onEntry": true
+        },
+        {
+          "id": "town_north_exit",
+          "name": "北街",
+          "tile": {
+            "x": 7,
+            "y": 0
+          },
+          "direction": "NORTH",
+          "returnTile": {
+            "x": 7,
+            "y": 1
+          }
+        },
+        {
+          "id": "town_west_exit",
+          "name": "西郊",
+          "tile": {
+            "x": 0,
+            "y": 3
+          },
+          "direction": "WEST",
+          "returnTile": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "id": "town_south_exit",
+          "name": "南郊",
+          "tile": {
+            "x": 10,
+            "y": 11
+          },
+          "direction": "SOUTH",
+          "returnTile": {
+            "x": 10,
+            "y": 10
+          }
+        }
+      ],
+      "indoors": false,
+      "terrain": [
+        "....................",
+        "wwwwwwwvww..........",
+        ".......r.w..........",
+        "rrrrrrrr.wwwwww.....",
+        "www....r.w...rhrrr..",
+        "..www..r.w...rw..r..",
+        "....wwwvww...rw..rrr",
+        "....w.rrrrrrrrw.....",
+        "..r.wrr...r...wwwwww",
+        "..rrhrr...r.........",
+        "wwwww.....r.........",
+        "..........r........."
+      ],
+      "scenery": [
+        {
+          "kind": "HOME",
+          "x": 6,
+          "y": 5.95,
+          "width": 2.25,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 4
+            },
+            {
+              "x": 6,
+              "y": 4
+            },
+            {
+              "x": 5,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "HOUSE",
+          "x": 3,
+          "y": 7.95,
+          "width": 2.15,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 6
+            },
+            {
+              "x": 3,
+              "y": 6
+            },
+            {
+              "x": 3,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "SHOP",
+          "x": 11.5,
+          "y": 6.95,
+          "width": 2.15,
+          "footprint": [
+            {
+              "x": 11,
+              "y": 5
+            },
+            {
+              "x": 12,
+              "y": 5
+            },
+            {
+              "x": 12,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "TOFU_SHOP",
+          "x": 16.38,
+          "y": 3.95,
+          "width": 2.1,
+          "footprint": [
+            {
+              "x": 15,
+              "y": 2
+            },
+            {
+              "x": 16,
+              "y": 2
+            },
+            {
+              "x": 15,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "WELL",
+          "x": 8.5,
+          "y": 3.95,
+          "width": 1.0,
+          "footprint": [
+            {
+              "x": 8,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "WELL",
+          "x": 5.5,
+          "y": 7.95,
+          "width": 1.0,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "BUSH",
+          "x": 18.5,
+          "y": 1.9,
+          "width": 0.72,
+          "footprint": [
+            {
+              "x": 18,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "BUSH",
+          "x": 19.5,
+          "y": 1.9,
+          "width": 0.72,
+          "footprint": [
+            {
+              "x": 19,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "TREE",
+          "x": 11,
+          "y": 2.95,
+          "width": 1.7,
+          "footprint": [
+            {
+              "x": 10,
+              "y": 2
+            },
+            {
+              "x": 11,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "BUSH",
+          "x": 17.5,
+          "y": 3.9,
+          "width": 0.72,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "TREE",
+          "x": 19.5,
+          "y": 3.95,
+          "width": 1.05,
+          "footprint": [
+            {
+              "x": 19,
+              "y": 2
+            },
+            {
+              "x": 19,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "BUSH",
+          "x": 1.5,
+          "y": 5.9,
+          "width": 0.72,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "TREE",
+          "x": 19.5,
+          "y": 5.95,
+          "width": 1.05,
+          "footprint": [
+            {
+              "x": 19,
+              "y": 4
+            },
+            {
+              "x": 19,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "BUSH",
+          "x": 10.5,
+          "y": 6.9,
+          "width": 0.72,
+          "footprint": [
+            {
+              "x": 10,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "REEDS",
+          "x": 19.55,
+          "y": 7.95,
+          "width": 0.65,
+          "footprint": [
+            {
+              "x": 19,
+              "y": 7
+            }
+          ],
+          "height": 0.82
+        },
+        {
+          "kind": "TREE",
+          "x": 19.5,
+          "y": 10.95,
+          "width": 1.05,
+          "footprint": [
+            {
+              "x": 19,
+              "y": 9
+            },
+            {
+              "x": 19,
+              "y": 10
+            }
+          ]
+        },
+        {
+          "kind": "TREE",
+          "x": 15.55,
+          "y": 7.95,
+          "width": 1.7,
+          "footprint": [
+            {
+              "x": 15,
+              "y": 6
+            },
+            {
+              "x": 15,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "BUSH",
+          "x": 1.5,
+          "y": 1.0,
+          "width": 0.68,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ],
+          "height": 0.54
+        },
+        {
+          "kind": "TREE",
+          "x": 1.5,
+          "y": 6.95,
+          "width": 1.05,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "BUSH",
+          "x": 18.5,
+          "y": 5.9,
+          "width": 0.72,
+          "footprint": [
+            {
+              "x": 18,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 0.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 1.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 2.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 3.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 4.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 5.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 6.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 8.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 8,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 9.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 10.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 10,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 11.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 11,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 12.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 12,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 13.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 13,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 14.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 14,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 15.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 15,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 16.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 16,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 17.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 18.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 18,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 19.5,
+          "y": 0.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 19,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 0.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 1.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 2.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 3.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 4.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 5.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 6.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 7.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 8.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 8,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 9.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 11.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 11,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 12.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 12,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 13.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 13,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 14.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 14,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 15.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 15,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 16.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 16,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 17.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 18.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 18,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 19.5,
+          "y": 11.75,
+          "width": 1.02,
+          "height": 0.68,
+          "footprint": [
+            {
+              "x": 19,
+              "y": 11
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 0.35,
+          "y": 2.9,
+          "width": 0.4,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 0.35,
+          "y": 5.9,
+          "width": 0.4,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 0.35,
+          "y": 6.9,
+          "width": 0.4,
+          "height": 1.15,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 0.35,
+          "y": 7.9,
+          "width": 0.4,
+          "height": 1.15,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 0.35,
+          "y": 8.9,
+          "width": 0.4,
+          "height": 1.15,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 8
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 0.35,
+          "y": 9.9,
+          "width": 0.4,
+          "height": 1.15,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "BASKET",
+          "x": 5.18,
+          "y": 5.99,
+          "width": 0.83,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "FLOWER_POT",
+          "x": 6.99,
+          "y": 5.99,
+          "width": 0.43
+        },
+        {
+          "kind": "LAUNDRY",
+          "x": 3.75,
+          "y": 4.62,
+          "width": 1.75,
+          "height": 1.04
+        },
+        {
+          "kind": "HARVEST_BASKET",
+          "x": 3.45,
+          "y": 7.99,
+          "width": 0.62,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "FLOWER_POT",
+          "x": 2.05,
+          "y": 7.98,
+          "width": 0.43
+        },
+        {
+          "kind": "MENDING",
+          "x": 12.64,
+          "y": 6.99,
+          "width": 1.17,
+          "footprint": [
+            {
+              "x": 12,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 12.26,
+          "y": 6.99,
+          "width": 0.45,
+          "footprint": [
+            {
+              "x": 12,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "STOVE",
+          "x": 15.0,
+          "y": 3.99,
+          "width": 0.59,
+          "footprint": [
+            {
+              "x": 15,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "TOFU_TABLE",
+          "x": 15.57,
+          "y": 3.99,
+          "width": 0.9,
+          "footprint": [
+            {
+              "x": 15,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "FLOWER_POT",
+          "x": 16.97,
+          "y": 3.99,
+          "width": 0.43
+        },
+        {
+          "kind": "BASKET",
+          "x": 5.95,
+          "y": 7.99,
+          "width": 0.52
+        },
+        {
+          "kind": "GRAIN_MAT",
+          "x": 17.0,
+          "y": 1.77,
+          "width": 1.65,
+          "height": 0.68
+        },
+        {
+          "kind": "VEGETABLE_PATCH",
+          "x": 12.2,
+          "y": 10.55,
+          "width": 2.55,
+          "height": 1.2
+        },
+        {
+          "kind": "VEGETABLE_PATCH",
+          "x": 7.1,
+          "y": 10.6,
+          "width": 2.1,
+          "height": 0.9
+        },
+        {
+          "kind": "GRAIN_MAT",
+          "x": 8.95,
+          "y": 10.6,
+          "width": 0.95,
+          "height": 0.45
+        },
+        {
+          "kind": "BUSH",
+          "x": 2.72,
+          "y": 5.27,
+          "width": 0.3
+        },
+        {
+          "kind": "BUSH",
+          "x": 4.78,
+          "y": 5.9,
+          "width": 0.3
+        },
+        {
+          "kind": "BUSH",
+          "x": 6.0,
+          "y": 8.15,
+          "width": 0.27
+        },
+        {
+          "kind": "BUSH",
+          "x": 8.95,
+          "y": 4.05,
+          "width": 0.28
+        },
+        {
+          "kind": "BUSH",
+          "x": 13.87,
+          "y": 3.68,
+          "width": 0.34
+        },
+        {
+          "kind": "BUSH",
+          "x": 14.15,
+          "y": 9.98,
+          "width": 0.28
+        },
+        {
+          "kind": "BUSH",
+          "x": 17.6,
+          "y": 8.98,
+          "width": 0.32
+        },
+        {
+          "kind": "BUSH",
+          "x": 12.85,
+          "y": 6.93,
+          "width": 0.27
+        },
+        {
+          "kind": "BUSH",
+          "x": 3.92,
+          "y": 7.91,
+          "width": 0.28
+        },
+        {
+          "kind": "SHOP_SIGN",
+          "x": 10.5,
+          "y": 6.99,
+          "width": 0.52,
+          "height": 1.12,
+          "inscription": "裁缝",
+          "footprint": [
+            {
+              "x": 10,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "SHOP_SIGN",
+          "x": 17.32,
+          "y": 3.99,
+          "width": 0.52,
+          "height": 1.12,
+          "inscription": "豆腐"
+        },
+        {
+          "kind": "LANTERNS",
+          "x": 16.85,
+          "y": 3.05,
+          "width": 0.48,
+          "height": 0.88
+        },
+        {
+          "kind": "LANTERNS",
+          "x": 10.63,
+          "y": 5.9,
+          "width": 0.43,
+          "height": 0.8
+        },
+        {
+          "kind": "SHOP_BANNER",
+          "x": 12.82,
+          "y": 6.91,
+          "width": 0.38,
+          "height": 1.1,
+          "footprint": [
+            {
+              "x": 12,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "WOODSHED",
+          "x": 15.75,
+          "y": 7.99,
+          "width": 1.25,
+          "height": 1.35,
+          "footprint": [
+            {
+              "x": 15,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "HANDCART",
+          "x": 18.5,
+          "y": 5.98,
+          "width": 1.12,
+          "height": 0.92,
+          "footprint": [
+            {
+              "x": 18,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "BENCH",
+          "x": 8.63,
+          "y": 3.97,
+          "width": 0.72,
+          "height": 0.42,
+          "footprint": [
+            {
+              "x": 8,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "WASHBASKET",
+          "x": 5.96,
+          "y": 7.97,
+          "width": 0.62,
+          "height": 0.6
+        },
+        {
+          "kind": "HARVEST_BASKET",
+          "x": 3.7,
+          "y": 7.96,
+          "width": 0.37,
+          "height": 0.35,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "ROOSTER",
+          "x": 3.65,
+          "y": 2.65,
+          "width": 0.4
+        },
+        {
+          "kind": "HEN",
+          "x": 2.8,
+          "y": 2.45,
+          "width": 0.34
+        },
+        {
+          "kind": "HEN",
+          "x": 3.65,
+          "y": 4.7,
+          "width": 0.34
+        },
+        {
+          "kind": "SLEEPING_CAT",
+          "x": 12.63,
+          "y": 7.03,
+          "width": 0.49,
+          "height": 0.29
+        },
+        {
+          "kind": "GROOMING_CAT",
+          "x": 3.8,
+          "y": 8.36,
+          "width": 0.35,
+          "height": 0.48
+        },
+        {
+          "kind": "REEDS",
+          "x": 3,
+          "y": 1.15,
+          "width": 0.52,
+          "height": 0.65
+        },
+        {
+          "kind": "REEDS",
+          "x": 9.15,
+          "y": 4.6,
+          "width": 0.43,
+          "height": 0.7
+        },
+        {
+          "kind": "REEDS",
+          "x": 4.1,
+          "y": 8.35,
+          "width": 0.38,
+          "height": 0.65
+        },
+        {
+          "kind": "REEDS",
+          "x": 14.15,
+          "y": 9.8,
+          "width": 0.55,
+          "height": 0.72,
+          "footprint": [
+            {
+              "x": 14,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "REEDS",
+          "x": 17.9,
+          "y": 8.35,
+          "width": 0.44,
+          "height": 0.68
+        },
+        {
+          "kind": "REEDS",
+          "x": 13.85,
+          "y": 3.58,
+          "width": 0.4,
+          "height": 0.65
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 1.05,
+          "y": 2.8,
+          "width": 1.05,
+          "height": 0.38
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 1.6,
+          "y": 4.15,
+          "width": 0.65,
+          "height": 0.32
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 2.7,
+          "y": 2.8,
+          "width": 0.65,
+          "height": 0.3
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 4.65,
+          "y": 4.2,
+          "width": 0.56,
+          "height": 0.24
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 8.8,
+          "y": 1.05,
+          "width": 0.7,
+          "height": 0.29
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 8.8,
+          "y": 5.8,
+          "width": 0.6,
+          "height": 0.29
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 3.85,
+          "y": 8.95,
+          "width": 0.58,
+          "height": 0.28
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 5.0,
+          "y": 10.95,
+          "width": 1.05,
+          "height": 0.28
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 7.5,
+          "y": 10.95,
+          "width": 1.1,
+          "height": 0.3
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 11.7,
+          "y": 10.95,
+          "width": 1.6,
+          "height": 0.26
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 16.5,
+          "y": 10.75,
+          "width": 1.3,
+          "height": 0.38
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 17.8,
+          "y": 9.15,
+          "width": 0.85,
+          "height": 0.32
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 18.6,
+          "y": 2.0,
+          "width": 0.85,
+          "height": 0.32
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 15.2,
+          "y": 1.3,
+          "width": 0.75,
+          "height": 0.31
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 13.9,
+          "y": 6.7,
+          "width": 0.52,
+          "height": 0.25
+        },
+        {
+          "kind": "MEADOW_GRASS",
+          "x": 9.35,
+          "y": 8.8,
+          "width": 0.65,
+          "height": 0.28
+        },
+        {
+          "kind": "SHOP_SIGN",
+          "x": 5.14,
+          "y": 8.04,
+          "width": 0.46,
+          "height": 0.76,
+          "inscription": "南井"
+        }
+      ]
+    },
+    {
+      "id": "town_east",
+      "name": "平安镇东",
+      "tiles": [
+        "#########.##########",
+        ".......##.####.....#",
+        "#..#####...##...#..#",
+        "#..#####........#..#",
+        "#.#########.########",
+        "#.###.###....#####.#",
+        ".............#####.#",
+        "#.......#...######.#",
+        "####....#...###.##.#",
+        "#..#....#...........",
+        "#..######..........#",
+        "#########.##########"
+      ],
+      "exits": [
+        {
+          "id": "town_east_west_exit",
+          "name": "向西",
+          "tile": {
+            "x": 0,
+            "y": 6
+          },
+          "direction": "WEST",
+          "returnTile": {
+            "x": 1,
+            "y": 6
+          },
+          "destinationExitId": "town_east_exit",
+          "onEntry": true
+        },
+        {
+          "id": "town_training_door",
+          "name": "武馆",
+          "tile": {
+            "x": 5,
+            "y": 5
+          },
+          "direction": "NORTH",
+          "returnTile": {
+            "x": 5,
+            "y": 6
+          },
+          "destinationExitId": "training_yard_door",
+          "onEntry": true
+        },
+        {
+          "id": "town_hall_entrance",
+          "name": "衙门",
+          "tile": {
+            "x": 15,
+            "y": 8
+          },
+          "direction": "NORTH",
+          "returnTile": {
+            "x": 15,
+            "y": 9
+          },
+          "destinationExitId": "town_hall_door",
+          "onEntry": true
+        },
+        {
+          "id": "town_chief_door",
+          "name": "村长家",
+          "tile": {
+            "x": 13,
+            "y": 2
+          },
+          "direction": "NORTH",
+          "returnTile": {
+            "x": 13,
+            "y": 3
+          },
+          "destinationExitId": "chief_home_door",
+          "onEntry": true
+        },
+        {
+          "id": "town_east_north_exit",
+          "name": "商业街",
+          "tile": {
+            "x": 9,
+            "y": 0
+          },
+          "direction": "NORTH",
+          "returnTile": {
+            "x": 9,
+            "y": 1
+          }
+        },
+        {
+          "id": "town_east_south_exit",
+          "name": "南郊",
+          "tile": {
+            "x": 9,
+            "y": 11
+          },
+          "direction": "SOUTH",
+          "returnTile": {
+            "x": 9,
+            "y": 10
+          }
+        },
+        {
+          "id": "town_east_east_exit",
+          "name": "东郊",
+          "tile": {
+            "x": 19,
+            "y": 9
+          },
+          "direction": "EAST",
+          "returnTile": {
+            "x": 18,
+            "y": 9
+          }
+        }
+      ],
+      "indoors": false,
+      "terrain": [
+        "....................",
+        "....................",
+        ".............r......",
+        "...........rrr......",
+        "........wwwvwwwwwwww",
+        ".....r..w..r........",
+        "rrrrrrrrhrrr........",
+        "........w.r.........",
+        "wwww....w.rr...r....",
+        "...w....w.rrrrrr....",
+        "...wwwwww...........",
+        "...................."
+      ],
+      "scenery": [
+        {
+          "kind": "TREE",
+          "x": 0.5,
+          "y": 3.95,
+          "width": 1.05,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 0,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "TREE",
+          "x": 0.5,
+          "y": 5.95,
+          "width": 1.05,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 4
+            },
+            {
+              "x": 0,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "REEDS",
+          "x": 0.45,
+          "y": 7.95,
+          "width": 0.65,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 7
+            }
+          ],
+          "height": 0.82
+        },
+        {
+          "kind": "TREE",
+          "x": 0.5,
+          "y": 10.95,
+          "width": 1.05,
+          "footprint": [
+            {
+              "x": 0,
+              "y": 9
+            },
+            {
+              "x": 0,
+              "y": 10
+            }
+          ]
+        },
+        {
+          "kind": "HALL",
+          "x": 5.5,
+          "y": 5.95,
+          "width": 3.6,
+          "inscription": "武馆",
+          "footprint": [
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 4,
+              "y": 3
+            },
+            {
+              "x": 5,
+              "y": 3
+            },
+            {
+              "x": 6,
+              "y": 3
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 4,
+              "y": 4
+            },
+            {
+              "x": 5,
+              "y": 4
+            },
+            {
+              "x": 6,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 5
+            },
+            {
+              "x": 4,
+              "y": 5
+            },
+            {
+              "x": 6,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "COURTHOUSE_GATE",
+          "x": 15.5,
+          "y": 8.95,
+          "width": 3.6,
+          "inscription": "衙门",
+          "footprint": [
+            {
+              "x": 13,
+              "y": 6
+            },
+            {
+              "x": 14,
+              "y": 6
+            },
+            {
+              "x": 15,
+              "y": 6
+            },
+            {
+              "x": 16,
+              "y": 6
+            },
+            {
+              "x": 13,
+              "y": 7
+            },
+            {
+              "x": 14,
+              "y": 7
+            },
+            {
+              "x": 15,
+              "y": 7
+            },
+            {
+              "x": 16,
+              "y": 7
+            },
+            {
+              "x": 13,
+              "y": 8
+            },
+            {
+              "x": 14,
+              "y": 8
+            },
+            {
+              "x": 16,
+              "y": 8
+            }
+          ]
+        },
+        {
+          "kind": "RESIDENCE_GATE",
+          "x": 13.5,
+          "y": 2.95,
+          "width": 2.16,
+          "footprint": [
+            {
+              "x": 12,
+              "y": 1
+            },
+            {
+              "x": 13,
+              "y": 1
+            },
+            {
+              "x": 12,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "TRAINING",
+          "x": 4.2,
+          "y": 5.98,
+          "width": 1.05
+        },
+        {
+          "kind": "REEDS",
+          "x": 16.45,
+          "y": 3.95,
+          "width": 0.54,
+          "height": 0.65,
+          "footprint": [
+            {
+              "x": 16,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "MEDICINE_STALL",
+          "x": 12.48,
+          "y": 8.85,
+          "width": 1.0,
+          "footprint": [
+            {
+              "x": 12,
+              "y": 8
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 13.49,
+          "y": 5.91,
+          "width": 0.94,
+          "height": 0.4,
+          "footprint": [
+            {
+              "x": 13,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 14.39,
+          "y": 5.91,
+          "width": 0.94,
+          "height": 0.4,
+          "footprint": [
+            {
+              "x": 14,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 15.29,
+          "y": 5.91,
+          "width": 0.94,
+          "height": 0.4,
+          "footprint": [
+            {
+              "x": 15,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 16.19,
+          "y": 5.91,
+          "width": 0.94,
+          "height": 0.4,
+          "footprint": [
+            {
+              "x": 16,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_H",
+          "x": 17.09,
+          "y": 5.91,
+          "width": 0.94,
+          "height": 0.4,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 17.52,
+          "y": 6.91,
+          "width": 0.34,
+          "height": 1.03,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 17.52,
+          "y": 7.91,
+          "width": 0.34,
+          "height": 1.03,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "WALL_V",
+          "x": 17.52,
+          "y": 8.91,
+          "width": 0.34,
+          "height": 1.03,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 8
+            }
+          ]
+        },
+        {
+          "kind": "WALL_POST",
+          "x": 13.11,
+          "y": 5.94,
+          "width": 0.32,
+          "height": 0.56,
+          "footprint": [
+            {
+              "x": 13,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_POST",
+          "x": 17.52,
+          "y": 5.98,
+          "width": 0.36,
+          "height": 0.62,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "WALL_POST",
+          "x": 17.52,
+          "y": 8.96,
+          "width": 0.33,
+          "height": 0.57,
+          "footprint": [
+            {
+              "x": 17,
+              "y": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "granny_home",
+      "name": "老婆婆家",
+      "tiles": [
+        "#########",
+        "###...###",
+        "#.#...#.#",
+        "#.#.#.#.#",
+        "#.......#",
+        "##......#",
+        "#.......#",
+        "#.......#",
+        "####.####"
+      ],
+      "exits": [
+        {
+          "id": "granny_home_door",
+          "name": "出门",
+          "tile": {
+            "x": 4,
+            "y": 8
+          },
+          "direction": "SOUTH",
+          "returnTile": {
+            "x": 4,
+            "y": 7
+          },
+          "destinationExitId": "town_granny_door",
+          "onEntry": true
+        }
+      ],
+      "indoors": true,
+      "terrain": [
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff"
+      ],
+      "scenery": [
+        {
+          "kind": "TRUNK",
+          "x": 2.5,
+          "y": 1.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 6.5,
+          "y": 1.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "BED",
+          "x": 2.5,
+          "y": 3.95,
+          "width": 1.1,
+          "height": 2.1,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "BED",
+          "x": 6.5,
+          "y": 3.95,
+          "width": 1.1,
+          "height": 2.1,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "GRANNY",
+          "x": 4.5,
+          "y": 3.94,
+          "width": 0.52,
+          "height": 1.2,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "STOVE",
+          "x": 1.5,
+          "y": 1.95,
+          "width": 0.8,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 7.5,
+          "y": 1.95,
+          "width": 0.65,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "FIREWOOD",
+          "x": 1.5,
+          "y": 5.94,
+          "width": 0.85,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tofu_shop",
+      "name": "豆腐店",
+      "tiles": [
+        "#########",
+        "##.....##",
+        "##.....##",
+        "#.......#",
+        "#######.#",
+        "#.####..#",
+        "#.......#",
+        "#.......#",
+        "####.####"
+      ],
+      "exits": [
+        {
+          "id": "tofu_shop_door",
+          "name": "出门",
+          "tile": {
+            "x": 4,
+            "y": 8
+          },
+          "direction": "SOUTH",
+          "returnTile": {
+            "x": 4,
+            "y": 7
+          },
+          "destinationExitId": "town_tofu_door",
+          "onEntry": true
+        }
+      ],
+      "indoors": true,
+      "terrain": [
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff"
+      ],
+      "scenery": [
+        {
+          "kind": "COUNTER",
+          "x": 1.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 2.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 3.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 4.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 5.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 6.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 2.5,
+          "y": 5.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 3.5,
+          "y": 5.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 4.5,
+          "y": 5.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 5.5,
+          "y": 5.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "BED",
+          "x": 1.5,
+          "y": 2.95,
+          "width": 1.1,
+          "height": 2.1,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 1
+            },
+            {
+              "x": 1,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "BED",
+          "x": 7.5,
+          "y": 2.95,
+          "width": 1.1,
+          "height": 2.1,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 1
+            },
+            {
+              "x": 7,
+              "y": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tailor_shop",
+      "name": "裁缝店",
+      "tiles": [
+        "#########",
+        "#...#####",
+        "#.#.....#",
+        "#.#.....#",
+        "#.#######",
+        "#.......#",
+        "#.......#",
+        "####.####",
+        "####.####"
+      ],
+      "exits": [
+        {
+          "id": "tailor_shop_door",
+          "name": "出门",
+          "tile": {
+            "x": 4,
+            "y": 8
+          },
+          "direction": "SOUTH",
+          "returnTile": {
+            "x": 4,
+            "y": 7
+          },
+          "destinationExitId": "town_tailor_door",
+          "onEntry": true
+        }
+      ],
+      "indoors": true,
+      "terrain": [
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff"
+      ],
+      "scenery": [
+        {
+          "kind": "COUNTER",
+          "x": 2.5,
+          "y": 3,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 2.5,
+          "y": 4,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 3
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 2.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 3.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 4.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 5.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 6.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 7.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 2.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 3.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 5.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 6.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 7.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 4.5,
+          "y": 1.95,
+          "width": 0.85,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 5.5,
+          "y": 1.95,
+          "width": 0.85,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 6.5,
+          "y": 1.95,
+          "width": 0.85,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 7.5,
+          "y": 1.95,
+          "width": 0.85,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "training_yard",
+      "name": "武馆",
+      "tiles": [
+        "###########",
+        "###.....###",
+        "###.....###",
+        "#.........#",
+        "#.........#",
+        "#.........#",
+        "##.......##",
+        "##.......##",
+        "##.......##",
+        "##.......##",
+        "#####.#####"
+      ],
+      "exits": [
+        {
+          "id": "training_yard_door",
+          "name": "出门",
+          "tile": {
+            "x": 5,
+            "y": 10
+          },
+          "direction": "SOUTH",
+          "returnTile": {
+            "x": 5,
+            "y": 9
+          },
+          "destinationExitId": "town_training_door",
+          "onEntry": true
+        }
+      ],
+      "indoors": true,
+      "terrain": [
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff"
+      ],
+      "scenery": [
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 1.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 2.5,
+          "y": 1.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 8.5,
+          "y": 1.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 8,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 9.5,
+          "y": 1.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 2.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 2.5,
+          "y": 2.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 8.5,
+          "y": 2.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 8,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 9.5,
+          "y": 2.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 2
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 6.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 9.5,
+          "y": 6.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 9.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 8.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 8
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 9.5,
+          "y": 8.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 8
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 9.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "town_hall",
+      "name": "衙门",
+      "tiles": [
+        "###########",
+        "#..#...#..#",
+        "#.........#",
+        "#.........#",
+        "#.........#",
+        "#.........#",
+        "#.#######.#",
+        "#.........#",
+        "#.........#",
+        "#####.#####",
+        "#####.#####"
+      ],
+      "exits": [
+        {
+          "id": "town_hall_door",
+          "name": "出门",
+          "tile": {
+            "x": 5,
+            "y": 10
+          },
+          "direction": "SOUTH",
+          "returnTile": {
+            "x": 5,
+            "y": 9
+          },
+          "destinationExitId": "town_hall_entrance",
+          "onEntry": true
+        }
+      ],
+      "indoors": true,
+      "terrain": [
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff",
+        "fffffffffff"
+      ],
+      "scenery": [
+        {
+          "kind": "TRUNK",
+          "x": 3.5,
+          "y": 1.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 7.5,
+          "y": 1.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 2.5,
+          "y": 7,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 3.5,
+          "y": 7,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 4.5,
+          "y": 7,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 5.5,
+          "y": 7,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 6.5,
+          "y": 7,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 7.5,
+          "y": 7,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 8.5,
+          "y": 7,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 8,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 2.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 3.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 4.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 6.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 7.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 8.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 8,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 9.5,
+          "y": 9.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 9,
+              "y": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chief_home",
+      "name": "村长家",
+      "tiles": [
+        "#########",
+        "#....#.##",
+        "#.......#",
+        "#.......#",
+        "#######.#",
+        "###.....#",
+        "###.....#",
+        "###.....#",
+        "####.####"
+      ],
+      "exits": [
+        {
+          "id": "chief_home_door",
+          "name": "出门",
+          "tile": {
+            "x": 4,
+            "y": 8
+          },
+          "direction": "SOUTH",
+          "returnTile": {
+            "x": 4,
+            "y": 7
+          },
+          "destinationExitId": "town_chief_door",
+          "onEntry": true
+        }
+      ],
+      "indoors": true,
+      "terrain": [
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff",
+        "fffffffff"
+      ],
+      "scenery": [
+        {
+          "kind": "TRUNK",
+          "x": 5.5,
+          "y": 1.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "TRUNK",
+          "x": 7.5,
+          "y": 1.92,
+          "width": 0.78,
+          "footprint": [
+            {
+              "x": 7,
+              "y": 1
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 1.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 2.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 3.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 3,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 4.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 4,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 5.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 5,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "COUNTER",
+          "x": 6.5,
+          "y": 5,
+          "width": 1,
+          "height": 1.0,
+          "footprint": [
+            {
+              "x": 6,
+              "y": 4
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 5.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 2.5,
+          "y": 5.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 5
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 6.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 2.5,
+          "y": 6.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 1.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 1,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "kind": "JAR",
+          "x": 2.5,
+          "y": 7.92,
+          "width": 0.55,
+          "footprint": [
+            {
+              "x": 2,
+              "y": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "locations": [
-    { "id": "sample_town_start", "name": "小镇起点" },
-    { "id": "sample_granny_gate", "name": "老婆婆院门" },
-    { "id": "sample_training_shed", "name": "校场西侧教习棚" }
+    {
+      "id": "player_home_start",
+      "name": "床边",
+      "sceneId": "player_home",
+      "tile": {
+        "x": 6,
+        "y": 2
+      }
+    },
+    {
+      "id": "town_start",
+      "name": "平安镇西",
+      "sceneId": "town",
+      "tile": {
+        "x": 7,
+        "y": 5
+      }
+    },
+    {
+      "id": "town_granny_gate",
+      "name": "老婆婆家门外",
+      "sceneId": "town",
+      "tile": {
+        "x": 2,
+        "y": 8
+      }
+    },
+    {
+      "id": "granny_service",
+      "name": "老婆婆",
+      "sceneId": "granny_home",
+      "tile": {
+        "x": 4,
+        "y": 4
+      },
+      "kind": "GATE",
+      "objectTile": {
+        "x": 4,
+        "y": 3
+      }
+    },
+    {
+      "id": "town_granny_yard",
+      "name": "老婆婆家地面",
+      "sceneId": "granny_home",
+      "tile": {
+        "x": 3,
+        "y": 6
+      },
+      "kind": "YARD",
+      "objectTile": {
+        "x": 3,
+        "y": 6
+      }
+    },
+    {
+      "id": "town_well",
+      "name": "南井井边",
+      "sceneId": "town",
+      "tile": {
+        "x": 5,
+        "y": 8
+      },
+      "kind": "WELL",
+      "objectTile": {
+        "x": 5,
+        "y": 7
+      }
+    },
+    {
+      "id": "town_upper_well",
+      "name": "北井",
+      "sceneId": "town",
+      "tile": {
+        "x": 8,
+        "y": 4
+      },
+      "kind": "WELL",
+      "objectTile": {
+        "x": 8,
+        "y": 3
+      }
+    },
+    {
+      "id": "town_firewood",
+      "name": "柴堆",
+      "sceneId": "granny_home",
+      "tile": {
+        "x": 2,
+        "y": 5
+      },
+      "kind": "FIREWOOD",
+      "objectTile": {
+        "x": 1,
+        "y": 5
+      }
+    },
+    {
+      "id": "town_mending_stall",
+      "name": "裁缝店柜台",
+      "sceneId": "tailor_shop",
+      "tile": {
+        "x": 5,
+        "y": 5
+      },
+      "kind": "STALL",
+      "objectTile": {
+        "x": 5,
+        "y": 4
+      }
+    },
+    {
+      "id": "town_tofu_counter",
+      "name": "豆腐店柜台",
+      "sceneId": "tofu_shop",
+      "tile": {
+        "x": 4,
+        "y": 6
+      }
+    },
+    {
+      "id": "town_training_gate",
+      "name": "武馆门外",
+      "sceneId": "town_east",
+      "tile": {
+        "x": 5,
+        "y": 6
+      }
+    },
+    {
+      "id": "town_training_shed",
+      "name": "武馆西侧",
+      "sceneId": "training_yard",
+      "tile": {
+        "x": 3,
+        "y": 3
+      },
+      "kind": "PRACTICE",
+      "objectTile": {
+        "x": 2,
+        "y": 3
+      }
+    },
+    {
+      "id": "town_training_east",
+      "name": "武馆东侧",
+      "sceneId": "training_yard",
+      "tile": {
+        "x": 7,
+        "y": 5
+      },
+      "kind": "PRACTICE",
+      "objectTile": {
+        "x": 8,
+        "y": 5
+      }
+    },
+    {
+      "id": "town_trial_platform",
+      "name": "武馆北台",
+      "sceneId": "training_yard",
+      "tile": {
+        "x": 5,
+        "y": 2
+      },
+      "kind": "PRACTICE",
+      "objectTile": {
+        "x": 5,
+        "y": 1
+      }
+    },
+    {
+      "id": "town_training_markings",
+      "name": "武馆兵器架",
+      "sceneId": "training_yard",
+      "tile": {
+        "x": 2,
+        "y": 6
+      },
+      "kind": "RACK",
+      "objectTile": {
+        "x": 1,
+        "y": 6
+      }
+    },
+    {
+      "id": "town_medicine_stall",
+      "name": "东街",
+      "sceneId": "town_east",
+      "tile": {
+        "x": 10,
+        "y": 8
+      }
+    },
+    {
+      "id": "town_hall_gate",
+      "name": "衙门外",
+      "sceneId": "town_east",
+      "tile": {
+        "x": 15,
+        "y": 9
+      }
+    },
+    {
+      "id": "town_hall_counter",
+      "name": "衙门外间",
+      "sceneId": "town_hall",
+      "tile": {
+        "x": 3,
+        "y": 7
+      }
+    },
+    {
+      "id": "town_hall_watch_room",
+      "name": "衙门值房",
+      "sceneId": "town_hall",
+      "tile": {
+        "x": 7,
+        "y": 5
+      }
+    },
+    {
+      "id": "town_hall_main_room",
+      "name": "村长家",
+      "sceneId": "chief_home",
+      "tile": {
+        "x": 4,
+        "y": 5
+      }
+    }
   ],
   "npcs": [
     {
       "id": "sample_granny",
       "name": "老婆婆",
-      "locationId": "sample_granny_gate",
+      "locationId": "granny_service",
       "morality": 60,
       "initialAffinity": 5,
-      "luck": 50
+      "luck": 50,
+      "dialogue": {
+        "WARY": [
+          {
+            "title": "在门口打招呼",
+            "text": "站门边说吧，院里刚扫过。有什么事，你慢慢讲。"
+          },
+          {
+            "title": "看看院里的活",
+            "text": "手头这件忙完就算一轮。要是忘了做哪件，就看看我刚交代的活。",
+            "service": "HOUSEWORK"
+          },
+          {
+            "title": "看看口粮",
+            "text": "四枚铜钱一份。干粮就在篮里，你看过这一份的大小再买。",
+            "service": "FOOD"
+          },
+          {
+            "title": "打听取水处",
+            "text": "喝水就到南井边。若我托你打水，把井边那只水桶打满就成。"
+          }
+        ],
+        "NORMAL": [
+          {
+            "title": "问她一早忙什么",
+            "text": "先把粮晒透，再扫屋子。天色好，倒能一口气做完。"
+          },
+          {
+            "title": "问家务的做法",
+            "text": "扫地就在屋里，劈柴去柴堆，打水就往南井去。",
+            "service": "HOUSEWORK"
+          },
+          {
+            "title": "买路上的干粮",
+            "text": "这一篮昨儿晾透了，带着走省心。一份四枚铜钱。",
+            "service": "FOOD"
+          },
+          {
+            "title": "问粮袋是谁补的",
+            "text": "市街缝补摊那位。她一眼就看出我总从右边提袋子，特地给那处多走了两针。",
+            "minAppearanceTier": 4
+          }
+        ],
+        "CLOSE": [
+          {
+            "title": "坐下说会儿话",
+            "text": "凳子在日头底下，你坐那边。你在镇上来去得勤，我听脚步都快认得了。"
+          },
+          {
+            "title": "问能替她分担什么",
+            "text": "你肯帮忙我就省心。我想起哪件要紧，就先托你办哪件。",
+            "service": "HOUSEWORK"
+          },
+          {
+            "title": "挑口粮备在身上",
+            "text": "路长就早些备着，别等饿得脚软才想起。来，看看这一份够不够你路上吃。",
+            "service": "FOOD"
+          },
+          {
+            "title": "问她为何愿意给外乡人活做",
+            "text": "头回进镇的人多半手生。给个明白活儿，自个儿挣下的钱，拿着踏实。"
+          }
+        ]
+      },
+      "services": [
+        "HOUSEWORK",
+        "FOOD"
+      ]
     },
     {
       "id": "sample_master",
       "name": "师父",
-      "locationId": "sample_training_shed",
+      "locationId": "town_training_shed",
       "morality": 45,
       "initialAffinity": 0,
-      "luck": 50
+      "luck": 50,
+      "dialogue": {
+        "WARY": [
+          {
+            "title": "问教习棚的规矩",
+            "text": "在棚下说话，莫挡着人出入。要练招，就去东边的空地。"
+          },
+          {
+            "title": "看看有没有口信要带",
+            "text": "跑口信先认准人。你把这一项看清，省得替我多传半句话。",
+            "service": "MESSAGE"
+          },
+          {
+            "title": "问能否拜师",
+            "text": "入门的条件一项项写着。看清了，再决定学哪一项。",
+            "service": "TRAINING"
+          },
+          {
+            "title": "问练功从哪儿做起",
+            "text": "两脚踩实。站得住了，再顾手上的快。"
+          }
+        ],
+        "NORMAL": [
+          {
+            "title": "问他今天在忙什么",
+            "text": "东边有人练手，北台留给正式试武。我就在这儿，练到哪处不明白都能来问。"
+          },
+          {
+            "title": "问校场口信的安排",
+            "text": "陪练在东边。要去问他，先把这一趟该问的事认清。",
+            "service": "MESSAGE"
+          },
+          {
+            "title": "看看能请教的武学",
+            "text": "已有哪一层、还差多少潜能，都列在这儿。学之前，自己过一眼。",
+            "service": "TRAINING"
+          },
+          {
+            "title": "问他年轻时怎么走镖",
+            "text": "一到桥头，我总把领车的活交给最肯低头看路的人。一路平稳，车里的人才睡得着。"
+          }
+        ],
+        "CLOSE": [
+          {
+            "title": "请他说一句练功要领",
+            "text": "有空便慢走一遍。哪儿慢着还走不顺，快了也还是那个毛病。"
+          },
+          {
+            "title": "商量下一步师门功课",
+            "text": "想练到哪一处，你有主意就先说。还有哪些接引或演练能做，咱们一并看。",
+            "service": "SECT"
+          },
+          {
+            "title": "请他看看潜能够学哪一项",
+            "text": "把心力放在手头用得上的地方。先翻开学项，有足够潜能再选。",
+            "service": "TRAINING"
+          },
+          {
+            "title": "问他怎么认识北台那位",
+            "text": "护路时认识的。场面越乱，他脚步越慢。我请他坐镇北台，图的就是这一点。"
+          }
+        ]
+      },
+      "services": [
+        "MESSAGE",
+        "TRAINING",
+        "SECT"
+      ]
+    },
+    {
+      "id": "town_sparring_partner",
+      "name": "校场陪练",
+      "locationId": "town_training_east",
+      "morality": 30,
+      "initialAffinity": 0,
+      "luck": 50,
+      "dialogue": {
+        "WARY": [
+          {
+            "title": "在练武区打招呼",
+            "text": "这手我还没练完。你站旁边说，我听得见。"
+          },
+          {
+            "title": "问今日校场怎么排",
+            "text": "师父若派你来，先把这趟口信对上，我再讲今天的安排。",
+            "service": "MESSAGE_HINT"
+          },
+          {
+            "title": "开口约一场切磋",
+            "text": "愿意比就上场。输赢当场认，场下各练各的，怎么样？",
+            "service": "SPAR"
+          },
+          {
+            "title": "问他为何在东边练",
+            "text": "这块地踩惯了，哪一步跨大了，我闭着眼都觉得出。"
+          }
+        ],
+        "NORMAL": [
+          {
+            "title": "问他练到第几遍",
+            "text": "第几遍早忘了。脚下那一下总差半寸，我就记着还得再来。"
+          },
+          {
+            "title": "打听师父交代的场次",
+            "text": "我把今日的安排记着呢。你带来的若是那趟口信，咱们就把它问明白。",
+            "service": "MESSAGE_HINT"
+          },
+          {
+            "title": "约一场点到为止",
+            "text": "来！要是我先露了空，你也给我点出来，我下回好留神。",
+            "service": "SPAR"
+          },
+          {
+            "title": "问他怎么练出这股劲",
+            "text": "刚来校场时我只顾着快。后来才晓得，脚没跟上，手快半拍也没用。"
+          }
+        ],
+        "CLOSE": [
+          {
+            "title": "请他互相挑挑毛病",
+            "text": "先说好，你挑我的，我挑你的，谁也别光听好话。"
+          },
+          {
+            "title": "喊他再比一场",
+            "text": "你来得正巧，我有一下新练的，早想找人比一比。打完也让我瞧瞧你的。",
+            "service": "SPAR"
+          },
+          {
+            "title": "把要回给师父的话对一遍",
+            "text": "来，咱们再对一遍。师父一听就知道你漏没漏后半截。",
+            "service": "MESSAGE_HINT"
+          },
+          {
+            "title": "问他头一次和师父过招",
+            "text": "我一吃亏就退到门口。师父站着等我回来，只说退一步可以，眼睛还得留在场上。"
+          }
+        ]
+      },
+      "services": [
+        "MESSAGE_HINT",
+        "SPAR"
+      ]
+    },
+    {
+      "id": "town_seamstress",
+      "name": "中年妇人",
+      "locationId": "town_mending_stall",
+      "morality": 45,
+      "initialAffinity": 0,
+      "luck": 50,
+      "dialogue": {
+        "WARY": [
+          {
+            "title": "在摊前招呼",
+            "text": "衣服放左边，针在右边。来办什么事，站在这儿说就好。"
+          },
+          {
+            "title": "问缝补摊的委托",
+            "text": "我手头要交代的事在这儿，你先看看缺什么。",
+            "service": "FIND"
+          },
+          {
+            "title": "问她怎么认布",
+            "text": "我拿到布会先展平，迎着光看纹路。折得好看，展开未必是同一块布。"
+          },
+          {
+            "title": "问做完去哪里领赏",
+            "text": "先回我这儿把事交清。账记上以后，去镇公所外间找顾炎武领赏。"
+          }
+        ],
+        "NORMAL": [
+          {
+            "title": "看她收拾针线",
+            "text": "红线拿来做记号，灰线补袖口。风一吹缠成一团，我一个上午就白忙了。"
+          },
+          {
+            "title": "问摊上缺哪种布",
+            "text": "补衣的活用普通布就行。你看看这笔委托上的用量。",
+            "service": "FIND"
+          },
+          {
+            "title": "问工衣哪里先磨破",
+            "text": "总是袖口。搬东西的人一抬胳膊，袖口就贴着石沿过去。"
+          },
+          {
+            "title": "问她认不认识老婆婆",
+            "text": "她的粮袋我补过两回。每回来都说只破一寸，摊开来足有一掌。"
+          }
+        ],
+        "CLOSE": [
+          {
+            "title": "问她为何认得自己",
+            "text": "你每回叫我都先等针从布里出来。摊上肯这么等一等的人，我记得住。"
+          },
+          {
+            "title": "看看她的活还缺什么",
+            "text": "你若正巧顺路，就替我看看这笔寻物。手头赶事，改日也成。",
+            "service": "FIND"
+          },
+          {
+            "title": "听她讲学针线的事",
+            "text": "我头一回缝口袋，把袋口也缝死了。拆了一晚上，才知道哪道缝得留着。"
+          },
+          {
+            "title": "聊来补衣的熟客",
+            "text": "工地管事躲着不肯先补自己的袖子，总说工地上别人比他更急。下回你见他，就知道哪边是我补的。"
+          }
+        ]
+      },
+      "services": [
+        "ARMOUR",
+        "FIND"
+      ]
+    },
+    {
+      "id": "town_physician",
+      "name": "游方郎中",
+      "locationId": "town_medicine_stall",
+      "morality": -20,
+      "initialAffinity": 0,
+      "luck": 50,
+      "dialogue": {
+        "WARY": [
+          {
+            "title": "在药摊前打招呼",
+            "text": "想问什么，先说清楚。我今天只想管我手头的事。"
+          },
+          {
+            "title": "打听那笔药材纠纷",
+            "text": "这事该从哪一笔算起，我有我的说法。你既问了，就把始末听全。",
+            "service": "HERBS"
+          },
+          {
+            "title": "问他为什么还在镇上",
+            "text": "有笔账没理明白。我走得了人，走不了这笔账。"
+          },
+          {
+            "title": "问镇上的传闻可不可信",
+            "text": "先问是谁告诉你的。有人讲一半，就盼着你替他把另一半编出来。"
+          }
+        ],
+        "NORMAL": [
+          {
+            "title": "问他为何总擦药秤",
+            "text": "秤干净了，药才称得准。至于过手的人准不准，那要另看。"
+          },
+          {
+            "title": "听他讲药材的来路",
+            "text": "药材一路经了几手，谁添过一张单子，我都记着。你愿意听，就从第一手说起。",
+            "service": "HERBS"
+          },
+          {
+            "title": "问委托复命后去哪里领赏",
+            "text": "办妥了先同我说。我把该记的那笔记上，你再到镇公所外间找顾炎武领赏。"
+          },
+          {
+            "title": "问他以前在哪里行医",
+            "text": "哪条路有人招手，我就在哪儿歇脚。有些人把药钱攒了几年来还，我记得比方子还清。"
+          }
+        ],
+        "CLOSE": [
+          {
+            "title": "问他打算何时启程",
+            "text": "等欠我的交待有着落。我走了这么远的路，偏偏这一笔舍不得放下。"
+          },
+          {
+            "title": "听他的真实打算",
+            "text": "旁人问我，我只说药材的数。你若肯听，我也说说我是怎么想的。",
+            "service": "HERBS"
+          },
+          {
+            "title": "问他怎么记着每笔旧账",
+            "text": "救过的人里，总有记得还药钱的。也有人拿你的心软当便宜。两种人我都记着。"
+          },
+          {
+            "title": "问他信不信顾炎武",
+            "text": "信。他翻簿子就认落在纸上的那一笔。换作别人，朋友先叫三声，账便糊过去了。"
+          }
+        ]
+      },
+      "services": [
+        "HERBS"
+      ]
     }
   ],
   "quests": [
@@ -30,38 +4143,358 @@
       "name": "师门接引",
       "giverNpcId": "sample_master",
       "turnInNpcId": "sample_master",
+      "objectives": [
+        {
+          "id": "confirm_trial",
+          "name": "确认试武安排",
+          "actionLabel": "确认试武安排",
+          "npcId": "sample_master",
+          "completionText": "师父说，试武对手在校场北台等你。先来我这里领棍和盘缠，再到镇西裁缝店找中年妇人置办护具。"
+        }
+      ],
       "reward": {
         "coins": 20,
         "potential": 0,
         "experience": 0,
         "items": [
-          { "itemId": "sample_light_wood_staff", "quantity": 1 }
+          {
+            "itemId": "sample_light_wood_staff",
+            "quantity": 1
+          }
         ],
         "martialArts": [
-          { "martialArtId": "sample_basic_staff", "level": 1 },
-          { "martialArtId": "sample_training_staff", "level": 1 }
+          {
+            "martialArtId": "sample_basic_staff",
+            "level": 1
+          },
+          {
+            "martialArtId": "sample_training_staff",
+            "level": 1
+          }
         ]
       }
+    },
+    {
+      "id": "granny_housework",
+      "name": "老婆婆的家务差事",
+      "giverNpcId": "sample_granny",
+      "turnInNpcId": "sample_granny",
+      "reward": {
+        "coins": 50,
+        "potential": 10,
+        "experience": 20,
+        "items": [],
+        "martialArts": []
+      },
+      "objectives": [
+        {
+          "id": "sweep",
+          "name": "扫地",
+          "actionLabel": "扫地",
+          "locationId": "town_granny_yard",
+          "assignmentText": "屋里的地积了灰，劳烦你帮我扫一扫。",
+          "completionText": "地面扫净了。"
+        },
+        {
+          "id": "fetch_water",
+          "name": "挑水",
+          "actionLabel": "打水",
+          "locationId": "town_well",
+          "assignmentText": "南井边的水桶空了，劳烦你打满一桶水。",
+          "completionText": "井边的水桶打满了。"
+        },
+        {
+          "id": "chop_wood",
+          "name": "劈柴",
+          "actionLabel": "劈柴",
+          "locationId": "town_firewood",
+          "assignmentText": "柴堆旁还有几截木头，劳烦你帮我劈了。",
+          "completionText": "木头劈成了柴。"
+        }
+      ],
+      "repeatBelowExperience": 5000,
+      "assignOnDialogue": true,
+      "settleOnObjective": true
+    },
+    {
+      "id": "training_message",
+      "name": "校场口信",
+      "giverNpcId": "sample_master",
+      "turnInNpcId": "sample_master",
+      "reward": {
+        "coins": 0,
+        "potential": 26,
+        "experience": 0,
+        "items": [],
+        "martialArts": []
+      },
+      "objectives": [
+        {
+          "id": "confirm_arrangement",
+          "name": "确认校场安排",
+          "actionLabel": "确认校场安排",
+          "npcId": "town_sparring_partner",
+          "completionText": "陪练说，今日东侧练拳，北台留给正式试武。回去告诉师父。"
+        }
+      ]
     }
   ],
+  "openingTraining": {
+    "basicUnarmedArtId": "basic_unarmed",
+    "staff": {
+      "questId": "sample_sect_introduction",
+      "basicArtId": "sample_basic_staff",
+      "appliedArtId": "sample_training_staff"
+    },
+    "sects": [
+      {
+        "id": "qingheng",
+        "name": "青衡门",
+        "unarmedArtId": "shouxian_palm"
+      },
+      {
+        "id": "duchuan",
+        "name": "渡川门",
+        "unarmedArtId": "huichao_fist"
+      }
+    ]
+  },
+  "openingSparring": {
+    "id": "opening_sparring",
+    "npcId": "town_sparring_partner",
+    "playerDefense": { "baseParryPercent": 5 },
+    "opponent": {
+      "strength": 7,
+      "agility": 7,
+      "maxHealth": 45,
+      "maxInnerPower": 18,
+      "defense": { "baseParryPercent": 8 }
+    },
+    "damageVariance": 1,
+    "lootGroups": [
+      { "weight": 45 },
+      { "weight": 30, "items": { "sample_light_wood_staff": 1 } },
+      { "weight": 20, "items": { "cloth_wristguard": 1 } },
+      { "weight": 5, "items": { "sample_light_wood_staff": 1, "cloth_cap": 1 } }
+    ]
+  },
   "martialArts": [
-    { "id": "sample_basic_staff", "name": "基本棍法", "maxLevel": 5 },
-    { "id": "sample_training_staff", "name": "校场棍法", "maxLevel": 1 }
+    {
+      "id": "sample_basic_staff",
+      "name": "基本棍法",
+      "maxLevel": 5,
+      "openingLevels": [
+        { "potentialCost": 8, "powerBonus": 2 },
+        { "potentialCost": 8, "powerBonus": 3 },
+        { "potentialCost": 12, "powerBonus": 4 },
+        { "potentialCost": 18, "powerBonus": 5 },
+        { "potentialCost": 26, "powerBonus": 6 }
+      ]
+    },
+    {
+      "id": "sample_training_staff",
+      "name": "校场棍法",
+      "maxLevel": 1,
+      "openingLevels": [
+        { "potentialCost": 10, "powerBonus": 3 }
+      ]
+    },
+    {
+      "id": "basic_unarmed",
+      "name": "基本拳脚",
+      "maxLevel": 5,
+      "openingLevels": [
+        { "potentialCost": 8, "powerBonus": 2 },
+        { "potentialCost": 8, "powerBonus": 3 }
+      ]
+    },
+    {
+      "id": "shouxian_palm",
+      "name": "守线掌",
+      "maxLevel": 5,
+      "openingAttackLines": [
+        "收肘守住门户，一掌沿中线推出",
+        "半步站定，以掌根向前一送",
+        "立掌护肩，转腕推出一掌"
+      ],
+      "openingLevels": [
+        { "potentialCost": 10, "powerBonus": 3 },
+        { "potentialCost": 12, "powerBonus": 4, "criticalBonusBasisPoints": 50 }
+      ]
+    },
+    {
+      "id": "huichao_fist",
+      "name": "回潮拳",
+      "maxLevel": 5,
+      "openingAttackLines": [
+        "撤步收拳，借转腰回身打出",
+        "拳锋先收，顺着肩势回击",
+        "侧移半步，借回转之势递出一拳"
+      ],
+      "openingLevels": [
+        { "potentialCost": 10, "powerBonus": 3 },
+        { "potentialCost": 12, "powerBonus": 4, "criticalBonusBasisPoints": 50 }
+      ]
+    },
+    {
+      "id": "basic_sword",
+      "name": "基本剑术",
+      "maxLevel": 5
+    }
   ],
   "items": [
-    { "id": "sample_light_wood_staff", "name": "轻木棍" }
+    {
+      "id": "ration",
+      "name": "口粮"
+    },
+    {
+      "id": "sample_light_wood_staff",
+      "name": "轻木棍",
+      "equipment": { "slot": "WEAPON", "weaponType": "STAFF", "stats": { "power": 2, "hit": 8 } }
+    },
+    {
+      "id": "cloth_wristguard",
+      "name": "布护腕",
+      "equipment": { "slot": "HANDS", "stats": { "protection": 1, "evasion": 2 } }
+    },
+    {
+      "id": "cloth_cap",
+      "name": "布帽",
+      "equipment": { "slot": "HEAD", "stats": { "protection": 1 } }
+    },
+    {
+      "id": "bamboo_training_sword",
+      "name": "竹脊练剑",
+      "equipment": { "slot": "WEAPON", "weaponType": "SWORD", "stats": { "power": 2, "hit": 6, "parry": 2 } }
+    },
+    {
+      "id": "willow_sword",
+      "name": "柳脊剑",
+      "equipment": {
+        "slot": "WEAPON",
+        "weaponType": "SWORD",
+        "stats": { "power": 4, "hit": 6, "parry": 3 },
+        "requiredArt": { "martialArtId": "basic_sword", "level": 2 }
+      }
+    },
+    {
+      "id": "traveler_coat",
+      "name": "行脚衣",
+      "equipment": { "slot": "BODY", "stats": { "protection": 2, "evasion": 3 } }
+    },
+    {
+      "id": "cloth_shoes",
+      "name": "软底布鞋",
+      "equipment": { "slot": "FEET", "stats": { "protection": 1, "evasion": 3 } }
+    },
+    {
+      "id": "wound_balm",
+      "name": "金疮膏",
+      "healthRecovery": 12
+    },
+    {
+      "id": "ordinary_cloth",
+      "name": "普通布",
+      "kind": "MATERIAL",
+      "description": "可用于寻物委托和换物。"
+    },
+    {
+      "id": "crucian_carp",
+      "name": "鲫鱼",
+      "kind": "MATERIAL",
+      "description": "可向老婆婆换读书镜，或向北台试武对手换柳脊剑。"
+    },
+    {
+      "id": "trial_token",
+      "name": "试武凭牌",
+      "kind": "QUEST",
+      "description": "校场试武的交付凭证，在师父处交付。"
+    }
   ],
+  "openingArmourShop": {
+    "npcId": "town_seamstress",
+    "stock": [
+      { "itemId": "cloth_cap", "price": 4 },
+      { "itemId": "traveler_coat", "price": 8 },
+      { "itemId": "cloth_wristguard", "price": 4 },
+      { "itemId": "cloth_shoes", "price": 4 }
+    ]
+  },
+  "supplies": {
+    "sellerNpcId": "sample_granny",
+    "foodItemId": "ration",
+    "foodPrice": 4,
+    "hungerReduction": 6,
+    "wellLocationId": "town_well",
+    "thirstReduction": 10
+  },
+  "creation": {
+    "minAttribute": 4,
+    "maxAttribute": 10,
+    "attributePoints": 12,
+    "maxLuckDraw": 88,
+    "healthBase": 30,
+    "healthPerConstitution": 3,
+    "innerPowerBase": 8,
+    "innerPowerPerConstitution": 2,
+    "initialCoins": 12
+  },
+  "time": {
+    "hungerInterval": 4,
+    "maxHunger": 12,
+    "thirstInterval": 3,
+    "maxThirst": 10,
+    "healthRecoveryInterval": 2,
+    "healthRecovery": 2,
+    "innerPowerRecoveryInterval": 3,
+    "innerPowerRecovery": 2,
+    "meditationDuration": 4,
+    "meditationRecovery": 3
+  },
   "appearance": {
-    "weights": { "strength": 1, "agility": 3, "insight": 2, "constitution": 4 },
-    "thresholds": [30, 39, 48, 63, 72, 81],
+    "weights": {
+      "strength": 1,
+      "agility": 3,
+      "insight": 2,
+      "constitution": 4
+    },
+    "thresholds": [
+      30,
+      39,
+      48,
+      63,
+      72,
+      81
+    ],
     "descriptions": [
-      { "male": "浓眉压眼，脸部轮廓颇为突兀。", "female": "阔额窄颌，五官相形悬殊。" },
-      { "male": "眉眼粗重，轮廓略显参差。", "female": "眉眼偏疏，轮廓略显生硬。" },
-      { "male": "相貌寻常，眉目平和。", "female": "相貌寻常，眉目平和。" },
-      { "male": "五官端正，举止利落。", "female": "五官匀称，仪态端方。" },
-      { "male": "眉眼俊朗，目光清亮。", "female": "眉目清秀，笑意明朗。" },
-      { "male": "眉目俊逸，在人群中颇为惹眼。", "female": "眉目秀丽，举止娴雅。" },
-      { "male": "神采卓然，眉宇间自有风流。", "female": "姿容明艳，一颦一笑皆见风姿。" }
+      {
+        "male": "浓眉压眼，脸部轮廓颇为突兀。",
+        "female": "阔额窄颌，五官相形悬殊。"
+      },
+      {
+        "male": "眉眼粗重，轮廓略显参差。",
+        "female": "眉眼偏疏，轮廓略显生硬。"
+      },
+      {
+        "male": "相貌寻常，眉目平和。",
+        "female": "相貌寻常，眉目平和。"
+      },
+      {
+        "male": "五官端正，举止利落。",
+        "female": "五官匀称，仪态端方。"
+      },
+      {
+        "male": "眉眼俊朗，目光清亮。",
+        "female": "眉目清秀，笑意明朗。"
+      },
+      {
+        "male": "眉目俊逸，在人群中颇为惹眼。",
+        "female": "眉目秀丽，举止娴雅。"
+      },
+      {
+        "male": "神采卓然，眉宇间自有风流。",
+        "female": "姿容明艳，一颦一笑皆见风姿。"
+      }
     ]
   }
 }

@@ -9,7 +9,7 @@
 | 模块 | 规则和数值 | 验收 |
 | --- | --- | --- |
 | [角色与补给](modules/character.md) | 四维、[相貌](modules/character.md#相貌)、游戏时间、饥渴、饮食与自然恢复 | [验收](modules/character.md#验收场景) |
-| [任务与经济](modules/quests/README.md) | 委托、累计领赏、差事、任务设计与报酬 | [验收](modules/quests/README.md#验收场景) |
+| [任务与经济](modules/quests/README.md) | 委托、发奖、差事、任务设计与报酬 | [验收](modules/quests/README.md#验收场景) |
 | [武学成长](modules/martial-arts.md) | [八项基本功](modules/martial-arts.md#八项基本功)、[两条门派路线](modules/martial-arts.md#两条门派路线)、请教、自练、运用与进阶招式 | [验收](modules/martial-arts.md#验收场景) |
 | [战斗](modules/combat.md) | [文字战斗页面](modules/combat.md#战斗页面)、回合、命中闪避、招架伤害、伤势和战败 | [验收](modules/combat.md#验收场景) |
 | [物品与装备](modules/items.md) | 背包、[61 种装备的属性与取得](modules/equipment.md)、[商贩与货单](modules/items.md#交易)、普通掉落与任务必掉 | [验收](modules/items.md#验收场景) |
@@ -31,9 +31,9 @@
 
 [任务并行与交付](modules/quests/README.md#任务并行与交付)
 
-### 累计领赏
+### 任务派发与结算
 
-[累计领赏](modules/quests/README.md#累计领赏)
+[任务派发与结算](modules/quests/design.md)
 
 ## 武学与修炼
 
@@ -85,4 +85,4 @@
 - 任务的对话入口、目标与交付流程见 [任务设计](modules/quests/design.md)。
 - 所有初始样例值、武学门槛、时间间隔、物品价格、掉落权重、声望变化和任务奖励由内容配置提供，按实际玩法检验合法范围与引用。掉落表可包含空结果。
 - 完整验收以同一版本覆盖开局、门派成长、探索、支线和终局。从建角到主线通关沿用同一份存档，并分别验证两条门派路线、各项任务交付和读档续玩。
-- 委托和差事交付、累计领赏、购买、食用、学习、战斗回合和领取战利品均以完整状态提交。文档中的验收场景可分别用于规则测试和真机验收。[模块边界与架构](architecture.md) · [验收规则](acceptance.md)
+- 任务派发与结算、购买、食用、学习、战斗回合和领取战利品均以完整状态提交。文档中的验收场景可分别用于规则测试和真机验收。[模块边界与架构](architecture.md) · [验收规则](acceptance.md)

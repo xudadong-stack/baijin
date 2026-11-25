@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Baijin" parent="@android:style/Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">?android:attr/colorBackground</item>
-        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+    <style name="Base.Theme.Baijin" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:colorAccent">@color/action_ink</item>
+        <item name="android:windowBackground">@color/paper</item>
+        <item name="android:statusBarColor">@color/paper</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowLightNavigationBar">true</item>
     </style>
+
+    <style name="Theme.Baijin" parent="Base.Theme.Baijin" />
 </resources>

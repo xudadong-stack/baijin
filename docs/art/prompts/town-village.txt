@@ -1,0 +1,24 @@
+Use case: stylized-concept. Asset type: production sprite atlas for the existing Chinese wuxia town RPG, not a scene or a mockup.
+Image 1 is a STYLE reference only. Match its finely inked hand-drawn watercolor, warm worn timber, muted grey-green vegetation, rice-paper cream, rustic blue-grey roof palette, soft daylight, and the same slightly elevated orthographic map view. Rich inhabited Chinese small-town everyday details. No humans, no modern items, no UI.
+Make one square PNG atlas with EXACTLY 4 columns and 4 rows, 16 equal cells. Each cell contains exactly ONE isolated complete sprite, centred, fully contained with at least 12 percent magenta margin on all sides. Each object has its own appropriate intrinsic proportions; do not make a background, tile floor, scene or decorative panel. All empty space is perfectly flat solid pure RGB(255,0,255) magenta for engine chroma key extraction; no magenta reflected on objects, no checkerboard, no labels, no grid lines, no typography or text, no watermarks. Ground contact close to bottom of each cell, soft small contact shadows only. Disconnected separate objects in each group must remain within their cell.
+ROW 1, left to right:
+1. A terracotta flower planter with an abundant informal bunch of tiny cream and muted pink flowers and green leaves, homely, asymmetrical.
+2. A broad woven harvest basket full of leafy cabbages, radishes with leaves and two gourds, grouped at ground level.
+3. A low rustic tofu-shop workbench with clearly visible white tofu cubes on two bamboo trays, a white ceramic bowl and a bamboo ladle. Not a tea table. No canopy and no shop sign.
+4. A small parked rustic wooden two-wheel handcart, angled three-quarter view, holding two beige grain sacks and a rolled woven mat, full wheels and handles visible.
+ROW 2:
+1. A tiny lean-to firewood shelter: four slender wooden posts and a modest sloping weathered wooden roof over neatly stacked firewood and one axe block. Not a building or a large shed.
+2. A plain worn low wooden street bench for two people, empty, front three-quarter view, no cushions.
+3. A wall-mounted hanging shop sign on a small wooden bracket: one vertical blank warm-cream timber board, dark wooden frame, fully blank centre for engine text. No calligraphy.
+4. A wall-mounted lantern bracket supporting two small muted vermilion-red Chinese paper lanterns with gold-brown tassels, one slightly lower, daytime unlit. No wall behind, no writing.
+ROW 3:
+1. One small rustic red-brown rooster standing in a natural walking pose, right facing, red comb, dark grey-green tail, full feet, cartoony game proportions but credible bird anatomy.
+2. One small speckled cream-brown hen pecking down at the ground, side view facing right, full feet and tail, same scale and style as rooster.
+3. One ginger-and-cream domestic cat curled up asleep, tail wrapped around body, viewed from the same map angle, no cushion.
+4. One grey-and-white domestic cat sitting and grooming one raised paw, full body, same map angle, no furniture.
+ROW 4:
+1. A natural riverbank clump of reeds and low sedge, a few tall thin reeds and cattails, tapered irregular silhouette, no soil tile and no water.
+2. A low irregular tuft of fine meadow grasses with a few tiny cream daisies, wide and shallow, no ground rectangle.
+3. A homely laundry basket with cloths, one wooden bucket and a small ribbed washboard grouped together, no person, no water surface.
+4. A slender bamboo shop banner pole and short crosspiece, with a faded indigo fabric hanging vertically, empty cloth with one cream patch, a little weathered, no words.
+Keep these sprites consistent as a coherent asset family. Each sprite is isolated and easy to extract from its own grid cell. Small props should still have clear hand-painted silhouette and readable details at map scale.
